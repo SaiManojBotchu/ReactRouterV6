@@ -1,21 +1,32 @@
-import { Routes, Route } from 'react-router-dom';
+// https://youtu.be/Ul3y1LXxzdU
+import { Routes, Route, NavLink } from 'react-router-dom';
 import Home from './pages/Home';
-import Contact from './pages/Contact';
-import Layout from './pages/Layout';
-import Blogs from './pages/Blogs';
 import NoPage from './pages/NoPage';
+import BookRoutes from './BookRoutes';
 import './App.css';
 
 function App() {
   return (
-    <Routes>
-      <Route path='/' element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path='blogs' element={<Blogs />} />
-        <Route path='contact' element={<Contact />} />
+    <>
+      <nav className='App-Nav'>
+        <NavLink activeclasssname='active' to='/'>
+          Home
+        </NavLink>
+        <br />
+        <NavLink activeclasssname='active' to='/books'>
+          BookList
+        </NavLink>
+        <br />
+      </nav>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        {/* if we have one route that is rendering out bunch of other routes then 
+        we need to make sure to add "/*" to the end of the path 
+        because we need to match anything that comes after the path */}
+        <Route path='/books/*' element={<BookRoutes />} />
         <Route path='*' element={<NoPage />} />
-      </Route>
-    </Routes>
+      </Routes>
+    </>
   );
 }
 
