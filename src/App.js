@@ -1,15 +1,18 @@
 // https://youtu.be/Ul3y1LXxzdU
-import { Routes, Route, NavLink } from 'react-router-dom';
+import { Routes, Route, NavLink, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import NoPage from './pages/NoPage';
 import BookRoutes from './BookRoutes';
 import './App.css';
 
 function App() {
+  const location = useLocation();
+  console.log(location.state);
+
   return (
     <>
       <nav className='App-Nav'>
-        <NavLink activeclasssname='active' to='/'>
+        <NavLink activeclasssname='active' to='/' state='hi'>
           Home
         </NavLink>
         <br />
