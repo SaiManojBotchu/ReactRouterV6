@@ -7,19 +7,19 @@ function BookLayout() {
   return (
     <>
       <nav className='App-Nav'>
-        <NavLink activeclasssname='active' to='/books/1'>
+        <NavLink activeClassName='active' to='/books/1'>
           Book1
         </NavLink>
         <br />
-        <NavLink activeclasssname='active' to='/books/2'>
+        <NavLink activeClassName='active' to='/books/2'>
           Book2
         </NavLink>
         <br />
-        <NavLink activeclasssname='active' to={`/books/${number}`}>
+        <NavLink activeClassName='active' to={`/books/${number}`}>
           Book{number}
         </NavLink>
         <br />
-        <NavLink activeclasssname='active' to='/books/new'>
+        <NavLink activeClassName='active' to='/books/new'>
           NewBook
         </NavLink>
       </nav>
